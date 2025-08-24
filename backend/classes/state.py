@@ -2,7 +2,15 @@ from typing import TypedDict, NotRequired, Required, Dict, List, Any
 
 #Define the input state
 class InputState(TypedDict, total=False):
-    company: Required[str]
+    shoe_type: Required[str]
+    size: Required[float]
+    budget: NotRequired[int]
+    color: NotRequired[str]
+
 
 class ResearchState(InputState):
     url: str
+    price: float
+    shoe_type: str
+    size: float
+    color: str

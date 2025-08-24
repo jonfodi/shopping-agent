@@ -12,11 +12,14 @@ from .nodes.process import Processor
 logger = logging.getLogger(__name__)
 
 class Graph:
-    def __init__(self, company=None):
+    def __init__(self, shoe_type=None, size=None, budget=None, color=None):
         
         # Initialize InputState
         self.input_state = InputState(
-            company=company,
+            shoe_type=shoe_type,
+            size=size,
+            budget=budget,
+            color=color,
             messages=[
                 SystemMessage(content="Expert shopper searching Nike")
             ]
