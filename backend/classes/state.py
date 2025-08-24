@@ -8,8 +8,8 @@ class InputState(TypedDict, total=False):
     color: NotRequired[str]
 
 
-class ResearchState(InputState):
-    url: str
+class ShoppingState(InputState):
+    url: list[str]
     price: float
     shoe_type: str
     size: float

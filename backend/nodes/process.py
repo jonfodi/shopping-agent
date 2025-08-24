@@ -6,12 +6,11 @@ import dotenv
 
 dotenv.load_dotenv()
 
-from ..classes import InputState, ResearchState
+from ..classes import InputState, ShoppingState
 
-from ..classes import ResearchState
 
 logger = logging.getLogger(__name__)
 
 class Processor:
-    def run(self, state: InputState) -> ResearchState:
+    def run(self, state: InputState) -> ShoppingState:
         pass
