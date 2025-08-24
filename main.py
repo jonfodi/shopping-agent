@@ -17,8 +17,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
-
 @app.post("/run_graph")
 async def run_graph(request: ShoppingRequest):
 
@@ -39,4 +37,3 @@ async def root():
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
-
