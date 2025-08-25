@@ -35,7 +35,6 @@ class Graph:
 
     def _init_nodes(self):
         """Initialize all workflow nodes"""
-        self.search = Searcher()
         self.extract = Extractor()
         self.process = Processor()
         self.crawler = Crawler()
@@ -46,7 +45,6 @@ class Graph:
         self.workflow = StateGraph(InputState)
         
         # Add nodes with their respective processing functions
-        self.workflow.add_node("searcher", self.search.run)
         self.workflow.add_node("extractor", self.extract.run)
         self.workflow.add_node("processor", self.process.run)
         self.workflow.add_node("crawler", self.crawler.run)
