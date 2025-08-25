@@ -52,8 +52,8 @@ class Graph:
         self.workflow.add_node("crawler", self.crawler.run)
 
         # Configure workflow edges
-        self.workflow.set_entry_point("searcher")
-        self.workflow.set_finish_point("processor")
+        self.workflow.set_entry_point("crawler")
+        self.workflow.set_finish_point("extractor")
         
 
         # Connect remaining nodes
