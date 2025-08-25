@@ -8,7 +8,6 @@ from backend.nodes.crawler import Crawler
 
 from .classes.state import InputState
 from .nodes.extract import Extractor
-from .nodes.search import Searcher
 from .nodes.process import Processor
 
 logger = logging.getLogger(__name__)
