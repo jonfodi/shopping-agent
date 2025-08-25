@@ -29,7 +29,7 @@ class Extractor:
         # print("ENHANCED SHOE DATA FROM EXTRACT FUNCTION")
         # print(enhanced_shoe_data)
         # print("*"*100)
-
+        print(enhanced_shoe_data)
         print("extraction complete")
 
         state["enhanced_shoe_data"] = enhanced_shoe_data  

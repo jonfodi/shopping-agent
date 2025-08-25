@@ -6,7 +6,7 @@ from langgraph.graph import StateGraph
 
 from backend.nodes.crawler import Crawler
 
-from .classes.state import InputState
+from .classes.state import InputState, ShoppingState
 from .nodes.extract import Extractor
 from .nodes.process import Processor
 
@@ -41,7 +41,7 @@ class Graph:
  
     def _build_workflow(self):
         """Configure the state graph workflow"""
-        self.workflow = StateGraph(InputState)
+        self.workflow = StateGraph(ShoppingState)
         
         # Add nodes with their respective processing functions
         self.workflow.add_node("extractor", self.extract.run)
