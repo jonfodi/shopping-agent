@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 #  IMPROVEMENTS 
 # node for making the payment 
 class Graph:
-    def __init__(self, shoe_type=None, size=None, budget=None, color=None):
+    def __init__(self, shoe_type=None, size=None, budget=None, color=None, gender=None):
         
         # Initialize InputState
         self.input_state = InputState(
@@ -23,6 +23,7 @@ class Graph:
             size=size,
             budget=budget,
             color=color,
+            gender=gender,
             messages=[
                 SystemMessage(content="Expert shopper searching Nike")
             ]
