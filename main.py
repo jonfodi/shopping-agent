@@ -24,7 +24,8 @@ async def run_graph(request: ShoppingRequest):
         shoe_type=request.shoe_type,
         size=request.size,
         budget=request.budget,
-        color=request.color
+        color=request.color,
+        gender=request.gender
     )
     print("running graph")
     graph.run()

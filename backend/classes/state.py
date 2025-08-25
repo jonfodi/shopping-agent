@@ -15,8 +15,8 @@ class ShoeItem(TypedDict):
 
 # make gender enum of either male or female
 class Gender(Enum):
-    MALE = "male"
-    FEMALE = "female"
+    MALE = "men"
+    WOMAN = "women"
 
 class ShoeType(Enum):
     AIR_FORCE_ONE = "air force one"

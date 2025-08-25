@@ -2,7 +2,7 @@ import logging
 from tavily import TavilyClient
 import dotenv
 
-from backend.classes.state import InputState
+from backend.classes.state import Gender, InputState
 
 from ..classes import ShoppingState
 from typing import Any, Dict
@@ -34,7 +34,7 @@ class Crawler:
     
     def crawl_nike_with_tavily(self, state: InputState, crawl_instructions: str) -> Dict[str, Any]:
 
-        url = f"https://www.nike.com/{state.get('gender')}"
+        url = create_crawl_url(state.get("gender"))
         print(url)
         response = self.tavily_client.crawl(
             url=url,
@@ -142,3 +142,7 @@ def extract_title_from_content(raw_content: str, url: str) -> str:
     except Exception as e:
         logger.warning(f"Error extracting title from content: {e}")
         return "Nike Shoe"
+    
+
+def create_crawl_url(gender: Gender) -> str:
+    return f"https://www.nike.com/{gender.value}"
