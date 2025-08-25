@@ -30,6 +30,6 @@ class ShoppingState(InputState):
     url: str
     shoe_data: Dict[str, Any]
     enhanced_shoe_data: Dict[str, Any]
-    shoes: Dict[str, Any]  # List of all extracted shoes
+    shoe_reccomendations: Dict[str, Any]  # List of all extracted shoes
     extraction_status: NotRequired[str]  # Track extraction success/failure
 
