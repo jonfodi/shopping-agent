@@ -44,9 +44,9 @@ class Graph:
         self.workflow = StateGraph(ShoppingState)
         
         # Add nodes with their respective processing functions
+        self.workflow.add_node("crawler", self.crawler.run)
         self.workflow.add_node("extractor", self.extract.run)
         self.workflow.add_node("processor", self.process.run)
-        self.workflow.add_node("crawler", self.crawler.run)
 
         # Configure workflow edges
         self.workflow.set_entry_point("crawler")

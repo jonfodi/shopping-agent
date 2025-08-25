@@ -1,19 +1,28 @@
 
-# setup 
+# NIKE MULTI-AGENT SHOPPING TOOL
+Search your favorite shoes on nike and have your 
+
+# SETUP 
 Prereqs
 - Python 3.11 or higher 
-- uv 
 
 Steps 
-source .venv/bin/activate 
-uv pip install -r requirements.txt
+1) Clone repo 
+git clone https://github.com/jonfodi/shopping-agent.git
+1)  Create Virtual Env
+python -m venv venv 
+2) Activate Virtual Env
+source venv/bin/activate 
+3) Install Backend requirements 
+pip install -r requirements.txt
+4) Install Frontend requirements 
+cd frontend/
+npm install 
+5) Start backend server
+uvicorn main:app --reload
+6) start frontend server (separate terminal)
+cd frontend/
+npm run dev 
 
 Issue with UV - pulling x86_64 wheels for pydantic_core 
 - incompatible with arm (apple silicon)
-
-# Learning 
-
-1) clone repo 
-2) pull the hello world commit (first commit)
-3) run: python test.py 
-4) follow the print statements to see the agent workflow and how it passes data to itself!  

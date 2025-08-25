@@ -16,9 +16,6 @@ class ShoeType(Enum):
     AIR_JORDAN = "air jordan"
     AIR_MAX = "air max"
 
-
-# Define the input state
-# NOT USING SHOE TYPE OR SIZE RIGHT NOW IN PYDANTIC MODEL RIGHT NOW 
 class InputState(TypedDict, total=False):
     shoe_type: Required[str]
     size: Required[float]
