@@ -28,8 +28,11 @@ async def run_graph(request: ShoppingRequest):
         gender=request.gender
     )
     print("running graph")
-    graph.run()
+    final_state = graph.run()
+    shoe_recommendations = final_state.get("shoe_reccomendations")
+    print(shoe_recommendations)
     print("graph run")
+    return shoe_recommendations
 
 @app.get("/")
 async def root():

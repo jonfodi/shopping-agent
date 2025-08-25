@@ -19,7 +19,6 @@ class Processor:
         print("processing")
 
         shoe_recommendations = self.rank_shoe_options(shopping_state)
-        print(shoe_recommendations)
         # Update shopping state with ranked recommendations
         shopping_state["shoe_reccomendations"] = shoe_recommendations
         
