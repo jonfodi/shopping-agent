@@ -18,9 +18,11 @@ pip install -r requirements.txt
 4) Install Frontend requirements 
 cd frontend/
 npm install 
-5) Start backend server
+5) create a .env and add your tavily and openai api keys
+touch .env 
+6) Start backend server
 uvicorn main:app --reload
-6) start frontend server (separate terminal)
+7) start frontend server (separate terminal)
 cd frontend/
 npm run dev 
 
