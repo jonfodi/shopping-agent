@@ -1,8 +1,10 @@
 import logging
-from typing import Any, AsyncIterator, Dict
+from typing import Any, Dict
 
 from langchain_core.messages import SystemMessage
 from langgraph.graph import StateGraph
+
+from backend.nodes.crawler import Crawler
 
 from .classes.state import InputState
 from .nodes.extract import Extractor
@@ -36,6 +38,7 @@ class Graph:
         self.search = Searcher()
         self.extract = Extractor()
         self.process = Processor()
+        self.crawler = Crawler()
  
 
     def _build_workflow(self):
@@ -46,7 +49,7 @@ class Graph:
         self.workflow.add_node("searcher", self.search.run)
         self.workflow.add_node("extractor", self.extract.run)
         self.workflow.add_node("processor", self.process.run)
-
+        self.workflow.add_node("crawler", self.crawler.run)
 
         # Configure workflow edges
         self.workflow.set_entry_point("searcher")
@@ -54,8 +57,7 @@ class Graph:
         
 
         # Connect remaining nodes
-        self.workflow.add_edge("searcher", "extractor")
-        self.workflow.add_edge("extractor", "processor")
+        self.workflow.add_edge("crawler", "extractor")
 
     def run(self) -> Dict[str, Any]:
         """Execute the workflow synchronously"""
