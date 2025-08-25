@@ -23,8 +23,9 @@ class Extractor:
     def extract(self, state: ShoppingState) -> ShoppingState:
         print("extracting")
         url = state.get("url")
-        response = self.extract_from_url(url)
-        print(response)
+        shoe_data = state.get("shoe_data")
+        for shoe in shoe_data:
+            print(shoe.get("url"))
         print("extraction complete")
 
         shopping_state = {
