@@ -15,8 +15,11 @@ class Processor:
     def __init__(self):
         pass
 
-    def process(self, state: ShoppingState) -> ShoppingState:
+    def process(self, shopping_state: ShoppingState, input_state: InputState) -> ShoppingState:
+        print("processing")
+        print(shopping_state)
+        print(input_state)
         pass
     
-    def run(self, state: ShoppingState) -> ShoppingState:
-        return self.process(state)
+    def run(self, shopping_state: ShoppingState, input_state: InputState) -> ShoppingState:
+        return self.process(shopping_state, input_state)

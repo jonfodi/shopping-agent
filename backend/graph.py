@@ -39,7 +39,6 @@ class Graph:
         self.process = Processor()
         self.crawler = Crawler()
  
-
     def _build_workflow(self):
         """Configure the state graph workflow"""
         self.workflow = StateGraph(InputState)
@@ -71,7 +70,6 @@ class Graph:
         )
         print("graph invoked")
         return final_state
-
 
     def compile(self):
         graph = self.workflow.compile()
