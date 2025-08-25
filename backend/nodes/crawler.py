@@ -35,7 +35,6 @@ class Crawler:
     def crawl_nike_with_tavily(self, state: InputState, crawl_instructions: str) -> Dict[str, Any]:
 
         url = create_crawl_url(state.get("gender"))
-        print(url)
         response = self.tavily_client.crawl(
             url=url,
             instructions=crawl_instructions,
