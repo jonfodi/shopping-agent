@@ -12,5 +12,11 @@ from ..classes import InputState, ShoppingState
 logger = logging.getLogger(__name__)
 
 class Processor:
-    def run(self, state: InputState) -> ShoppingState:
+    def __init__(self):
         pass
+
+    def process(self, state: ShoppingState) -> ShoppingState:
+        pass
+    
+    def run(self, state: ShoppingState) -> ShoppingState:
+        return self.process(state)
