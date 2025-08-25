@@ -25,10 +25,10 @@ class Extractor:
 
         enhanced_shoe_data = {}
         enhanced_shoe_data = self.extract_shoe_data(state)
-        print("*"*100)
-        print("ENHANCED SHOE DATA FROM EXTRACT FUNCTION")
-        print(enhanced_shoe_data)
-        print("*"*100)
+        # print("*"*100)
+        # print("ENHANCED SHOE DATA FROM EXTRACT FUNCTION")
+        # print(enhanced_shoe_data)
+        # print("*"*100)
 
         print("extraction complete")
 
