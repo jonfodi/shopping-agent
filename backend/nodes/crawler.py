@@ -2,6 +2,8 @@ import logging
 from tavily import TavilyClient
 import dotenv
 
+from backend.classes.state import InputState
+
 from ..classes import ShoppingState
 from typing import Any, Dict
 
@@ -30,9 +32,10 @@ class Crawler:
             'shoe_data': shoe_data
         }
     
-    def crawl_nike_with_tavily(self, state: ShoppingState, crawl_instructions: str) -> Dict[str, Any]:
+    def crawl_nike_with_tavily(self, state: InputState, crawl_instructions: str) -> Dict[str, Any]:
 
-        url = f"https://www.nike.com/{state.gender}"
+        url = f"https://www.nike.com/{state.get('gender')}"
+        print(url)
         response = self.tavily_client.crawl(
             url=url,
             instructions=crawl_instructions,
@@ -45,11 +48,11 @@ class Crawler:
     def run(self, state: ShoppingState) -> Dict[str, Any]:
         return self.crawl(state)
 
-def create_crawl_instructions(state: ShoppingState) -> str:
+def create_crawl_instructions(state: InputState) -> str:
     instructions=f"""
-    Find individual nike {state.shoe_type} shoe product pages that start with '/t/' in the URL. 
+    Find individual nike {state.get("shoe_type")} shoe product pages that start with '/t/' in the URL. 
     Look for specific shoe models with names, prices, and product codes like 'FD2597-602' or 'HJ5940-071'. 
-    All shoes should be in the '{state.gender}s' category and under size {state.size}
+    All shoes should be in the '{state.get("gender")}s' category and under size {state.get("size")}
     """
     return instructions
     
