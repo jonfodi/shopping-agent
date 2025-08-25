@@ -56,6 +56,7 @@ class Graph:
 
         # Connect remaining nodes
         self.workflow.add_edge("crawler", "extractor")
+        self.workflow.add_edge("extractor", "processor")
 
     def run(self) -> Dict[str, Any]:
         """Execute the workflow synchronously"""
