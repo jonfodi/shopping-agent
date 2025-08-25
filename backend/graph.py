@@ -11,6 +11,8 @@ from .nodes.process import Processor
 
 logger = logging.getLogger(__name__)
 
+#  IMPROVEMENTS 
+# node for making the payment 
 class Graph:
     def __init__(self, shoe_type=None, size=None, budget=None, color=None):
         
