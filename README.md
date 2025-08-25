@@ -1,6 +1,6 @@
 
 # NIKE MULTI-AGENT SHOPPING TOOL
-Search your favorite shoes on nike and have your 
+Search your favorite shoes on nike and find hidden gems!
 
 # SETUP 
 Prereqs
